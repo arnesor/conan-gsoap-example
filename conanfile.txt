@@ -1,0 +1,8 @@
+[requires]
+gsoap/2.8.106
+
+[generators]
+cmake
+
+[options]
+#gsoap:with_ipv6=False
