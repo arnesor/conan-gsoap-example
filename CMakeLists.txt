@@ -17,13 +17,13 @@ message("SOAPCPP2: ${SOAPCPP2_PROG}")
 
 add_custom_command(
     OUTPUT ${CMAKE_BINARY_DIR}/calc.h
-    COMMAND ${CONAN_BIN_DIRS_GSOAP}/wsdl2h -o ${CMAKE_BINARY_DIR}/calc.h ${CMAKE_SOURCE_DIR}/calc.wsdl
+    COMMAND ${WSDL2H_PROG} -o ${CMAKE_BINARY_DIR}/calc.h ${CMAKE_SOURCE_DIR}/calc.wsdl
     DEPENDS ${CMAKE_SOURCE_DIR}/calc.wsdl
 )
 
 add_custom_command(
 	OUTPUT ${CMAKE_BINARY_DIR}/soapcalcProxy.cpp ${CMAKE_BINARY_DIR}/soapC.cpp
-    COMMAND ${CONAN_BIN_DIRS_GSOAP}/soapcpp2 -j -r -CL ${CMAKE_BINARY_DIR}/calc.h 
+    COMMAND ${SOAPCPP2_PROG} -j -r -CL ${CMAKE_BINARY_DIR}/calc.h
     DEPENDS ${CMAKE_BINARY_DIR}/calc.h
 )
 

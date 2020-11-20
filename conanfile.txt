@@ -6,6 +6,7 @@ gsoap/2.8.106
 
 [generators]
 cmake
+virtualenv            # Needed for cross compiling
 
 [options]
 #gsoap:with_ipv6=False
