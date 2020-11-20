@@ -9,6 +9,12 @@ else()
             first in order to install third-party libraries and generate conanbuildinfo.cmake.")
 endif()
 
+find_program(WSDL2H_PROG wsdl2h)
+message("WSDL2H  : ${WSDL2H_PROG}")
+
+find_program(SOAPCPP2_PROG soapcpp2)
+message("SOAPCPP2: ${SOAPCPP2_PROG}")
+
 add_custom_command(
     OUTPUT ${CMAKE_BINARY_DIR}/calc.h
     COMMAND ${CONAN_BIN_DIRS_GSOAP}/wsdl2h -o ${CMAKE_BINARY_DIR}/calc.h ${CMAKE_SOURCE_DIR}/calc.wsdl

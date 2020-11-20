@@ -1,6 +1,9 @@
 [requires]
 gsoap/2.8.106
 
+[build_requires]
+gsoap/2.8.106
+
 [generators]
 cmake
 
