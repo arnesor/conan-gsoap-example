@@ -1,12 +1,17 @@
 [requires]
 gsoap/2.8.106
 
-[build_requires]
+[build_requires]       # Only needed for cross compiling
 gsoap/2.8.106
 
 [generators]
 cmake
-virtualenv            # Needed for cross compiling
+virtualenv             # Only needed for cross compiling
+
+[imports]
+bin, *.dll -> ./bin    # Copies all dll files from packages bin folder to my "bin" folder
+lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder to my "bin" folder
 
 [options]
 #gsoap:with_ipv6=False
+*:shared=True
