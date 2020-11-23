@@ -13,5 +13,5 @@ bin, *.dll -> ./bin    # Copies all dll files from packages bin folder to my "bi
 lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder to my "bin" folder
 
 [options]
-#gsoap:with_ipv6=False
-*:shared=True
+# gsoap:with_ipv6=False
+# *:shared=False
